@@ -7,7 +7,7 @@ import {Card} from "../components/Card.jsx";
 export function Home () {
 
     useDocumentTitle('Mon blog')
-    const {data, loading, error} = useFetch('https://jsonplaceholder.typicode.com/posts?_limit=10')
+    const {data, loading, error} = useFetch('https://jsonplaceholder.typicode.com/posts?_limit=12')
 
     if (loading) {
         return <Spinner />
@@ -19,7 +19,7 @@ export function Home () {
 
     return <>
         <h1 className="mb-3">Mon Blog</h1>
-        <div className="row gap-4">
+        <div className="row ">
             {data.map((post) => (<div key={post.id} className="col-12 col-md-4">
                 <Card
                     image={`https://picsum.photos/id/${post.id}/280/180`}
